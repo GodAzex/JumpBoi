@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://d0jmsihhgeus3"]
 
+[ext_resource type="Script" uid="uid://cfv7ob00mxlio" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://ccyeyg6sfq2qr" path="res://Assets/Pixel_Adventure_1/Main Characters/Ninja Frog/Idle (32x32).png" id="1_v0iea"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvnsp"]
@@ -87,9 +88,18 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kogeq"]
+size = Vector2(19, 24)
+
 [node name="Player" type="CharacterBody2D" unique_id=2144907648]
+script = ExtResource("1_cvnsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=883437356]
 sprite_frames = SubResource("SpriteFrames_kogeq")
 autoplay = "default"
-frame_progress = 0.8009738
+frame = 6
+frame_progress = 0.60202825
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=572500071]
+position = Vector2(0.5, 4)
+shape = SubResource("RectangleShape2D_kogeq")
